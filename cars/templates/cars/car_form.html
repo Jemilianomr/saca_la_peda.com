@@ -1,0 +1,25 @@
+{%extends 'base.html'%}
+{%load cars_tags%}
+
+
+{%block content%}
+
+<div class="row">
+
+
+<form id="ejemplo" class="ejemplo" class="col s12 m6 l4" method="post" enctype="multipart/form-data">
+	{%csrf_token%}
+	{{form.as_p}}
+	<input class="btn green" type="submit" value="Guardar">
+	<a class="btn red" href="{%url 'list'%}">Cancelar</a>
+</form>
+</div>
+{%ultimo%}
+
+{%endblock content%}
+
+{%block scripts%}
+$(document).ready(function() {
+    $('select').material_select();
+ });
+{%endblock scripts%}

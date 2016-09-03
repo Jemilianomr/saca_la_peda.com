@@ -1,0 +1,9 @@
+<ul style="border: 2px color:orange">
+    {%for issue in recibidos%}
+    <li>
+        <a href="{%url 'detail' issue.id%}">
+            {{issue.modelo}}
+        </a>
+    </li>
+    {%endfor%}
+</ul>

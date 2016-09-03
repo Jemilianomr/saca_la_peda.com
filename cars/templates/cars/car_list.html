@@ -1,0 +1,49 @@
+{% extends 'base.html' %}
+{%load cars_tags%}
+
+{%block titulo%} Lista de Coches {%endblock titulo%}
+
+{%block content%}
+
+<h2>Total de problemas: {%problemasTotales%}</h2>
+
+<div class="row">
+
+<div class="row col m8">
+{%for car in object_list%}
+ 
+        <div class="col s4">
+          <div class="card hoverable">
+            <div class="card-image">
+            
+              <img src="{{car.foto.url}}">
+              <span class="card-title">{{car.modelo}}</span>
+            </div>
+            <div class="card-content">
+              <p>{{car.issue}}</p>
+            </div>
+            <div class="card-action">
+              <a href="{%url 'detail' car.id%}">Ver más</a>
+            </div>
+          </div>
+        </div>
+ 
+{%endfor%}
+</div>
+    <div class="col m4">
+        {%ultimo 3%}
+    </div>
+    <div class="col m4">
+        {%ultimos as issues%}
+            {%for issue in issues%}
+                <p><a href="{%url 'detail' issue.id%}"> {{issue.modelo}}</a></p>
+            {%endfor%}
+    </div>
+
+    <div class="col m4">
+    <p>Autos con estatus recibido</p>
+        {%recibidos%}
+    </div>
+
+</div>
+{%endblock content%}

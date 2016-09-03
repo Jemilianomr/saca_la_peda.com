@@ -1,0 +1,16 @@
+body{
+	background: transparent;
+}
+.ejemplo{
+	width: 200px;
+}
+
+@media(min-width:1000px){
+	.ejemplo{
+		widht:100%;
+	}
+
+h2{
+	text-align: center;
+}
+}

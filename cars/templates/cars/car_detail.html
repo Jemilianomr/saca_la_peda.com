@@ -1,0 +1,20 @@
+{%extends 'base.html'%}
+{%load cars_tags%}
+
+{%block content%}
+
+<h2>{{car.modelo}}</h2>
+<h5>Total de problemas: {%problemasTotales%}</h5>
+</br>
+<img style="width:300px;" src="{{car.foto.url}}">
+<h5><i class="small material-icons">schedule</i><span> {{car.fecha}}</span></h5>
+<h5><i class="small material-icons">perm_identity</i><span> {{car.propietario}}</span></h5>
+<h5><i class="small material-icons">report_problem</i><span> {{car.issue}}</span></h5>
+
+</br>
+
+<a class="btn blue" href="{%url 'update' car.id%}">Editar</a>
+<a class="btn red" href="{%url 'delete' car.id%}">Eliminar</a>
+
+
+{%endblock content%}
