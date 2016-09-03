@@ -25,14 +25,15 @@
 <body>
 	  <nav class="pink darken-4">
     <div class="nav-wrapper">
-      <a href="#!" class="brand-logo">CarParts</a>
+      <a href="{%url 'list'%}" class="brand-logo">SacaLaPeda</a>
       <a href="{%url 'list'%}" data-activates="mobile-demo" class="button-collapse"><i class="material-icons">Home</i></a>
       <ul class="right hide-on-med-and-down">
-        <li><a href="{%url 'new'%}">Dar de Alta</a></li>
-
+        <li><a href="#">Registrarse</a></li>
+        <li><a href="{%url 'new'%}">Crear Evento</a></li>
       </ul>
       <ul class="side-nav" id="mobile-demo">
-        <li><a href="{%url 'new'%}">Dar de Alta</a></li>
+        <li><a href="#">Registrarse</a></li>
+        <li><a href="{%url 'new'%}">Crear Evento</a></li>
       </ul>
     </div>
   </nav>
